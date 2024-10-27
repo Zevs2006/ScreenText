@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScreenText.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button Text="Добавить скриншот" Command="{Binding AddImageCommand}" />
+            <CollectionView ItemsSource="{Binding Images}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" HeightRequest="100" WidthRequest="100" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Извлечь текст" Command="{Binding ExtractTextCommand}" />
+            <Editor Text="{Binding ExtractedText}" HeightRequest="300" IsReadOnly="True"/>
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
